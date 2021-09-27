@@ -1,3 +1,3 @@
 import bingo.utils as bingo
 
-print(bingo.generar_carton())
+bingo.imprimir_carton(bingo.generar_carton())
