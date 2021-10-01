@@ -20,7 +20,8 @@ def format_card(card):
 def imprimir_carton(card):
     print(format_card(card))
 
-def grabar_carton(card):
-    file = open("carton.txt", "wt")
+def grabar_carton(card, filename="carton"):
+    filename = filename + ".txt"
+    file = open(filename, "wt")
     file.write(format_card(card))
     file.close()
