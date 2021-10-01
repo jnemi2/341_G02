@@ -6,12 +6,21 @@ def generar_carton():
     card.sort()
     return card
 
-def imprimir_carton(card):
+def format_card(card):
+    text = ""
     for i in range(len(card)):
         if card[i] <= 9:
-            print("0" + str(card[i]), end=" ")
+            text = text + "0" + str(card[i]) + " "
         else:
-            print(str(card[i]), end=" ")
+            text = text + str(card[i]) + " "
         if ((i+1) % 5) == 0:
-            print()
-    print()
+            text = text + "\n"
+    return text
+
+def imprimir_carton(card):
+    print(format_card(card))
+
+def grabar_carton(card):
+    file = open("carton.txt", "wt")
+    file.write(format_card(card))
+    file.close()
